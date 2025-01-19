@@ -161,6 +161,14 @@ A Postman collection is provided for testing the application. Follow these steps
 
 ---
 
+## API Documentation
+
+The project includes Swagger documentation for all available endpoints. You can access the API documentation at:
+
+`http://localhost:3000/api-docs`
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
