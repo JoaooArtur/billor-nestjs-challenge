@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  postgres:
+    container_name: billor-postgres
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "!MyStrongPassword"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      
+  rabbitmq:
+    container_name: billor-rabbitmq
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_DEFAULT_VHOST: "billor"
+
+  mongodb:
+    container_name: billor-mongodb
+    image: mongo:5.0.14
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "mongoadmin"
+      MONGO_INITDB_ROOT_PASSWORD: "secret" 
+
+volumes:
+  data:
