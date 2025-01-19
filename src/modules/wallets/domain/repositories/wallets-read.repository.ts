@@ -15,7 +15,6 @@ export class WalletsReadRepository {
   }
 
   async projectWallet(id: number, name: string, userId: number, balance: number): Promise<Wallet> {
-    console.log(id)
     return this.WalletModel.create({_id: id, name, userId, balance});
   }
 
